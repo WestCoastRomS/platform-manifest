@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Github remote -->
+  <remote  name="github"
+           fetch="https://github.com" />
+
+  <!-- Github SSH -->
+  <remote  name="private"
+           fetch="ssh://git@github.com" />
+
+  <!-- Gitlab remote -->
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+  <!-- WestCoastRomS remote -->
+  <remote  name="WestCoastRomS"
+           fetch="https://github.com/WestCoastRomS" 
+           revision="master" />
+           
+
+
+  <!-- WestCoastRomS REPOS -->
+
+  <!-- General -->
+  <project path="bionic" name="android_bionic" remote="WestCoastRomS" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="WestCoastRomS" />
+  <project path="build/make" name="android_build" remote="WestCoastRomS" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/kati" name="android_build_kati" remote="WestCoastRomS" />
+  <project path="build/soong" name="android_build_soong" remote="WestCoastRomS" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="manifest" name="android_manifest" remote="WestCoastRomS" />
+
+  <!-- External -->
+  <project path="external/clang" name="android_external_clang" remote="WestCoastRomS" />
+  <project path="external/drm_hwcomposer" name="android_external_drm_hwcomposer" remote="WestCoastRomS" />
+  <project path="external/DUI" name="android_external_DUI" remote="WestCoastRomS" revision="p9x" />
+  <project path="external/google" name="android_external_google" remote="WestCoastRomS" revision="p9x" />
+  <project path="external/perfetto" name="android_external_perfetto" remote="WestCoastRomS" />
+  <project path="external/protobuf" name="android_external_protobuf" remote="WestCoastRomS" />
+  <project path="external/selinux" name="android_external_selinux" remote="WestCoastRomS" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="android_frameworks_av" remote="WestCoastRomS" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="WestCoastRomS" />
+  <project path="frameworks/compile/mclinker" name="android_frameworks_compile_mclinker" remote="WestCoastRomS" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="WestCoastRomS" />
+  <project path="frameworks/opt/net/ims" name="android_frameworks_opt_net_ims" remote="WestCoastRomS" />
+  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="WestCoastRomS" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="WestCoastRomS" />
+
+  <!-- Hardware -->
+  <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" remote="WestCoastRomS" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="WestCoastRomS" />
+  <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="WestCoastRomS" />
+  <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="WestCoastRomS" />
+  <project path="hardware/qcom/msm8x84" name="android_hardware_qcom_msm8x84" remote="WestCoastRomS" />
+  <project path="hardware/ril" name="android_hardware_ril" remote="WestCoastRomS" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="WestCoastRomS" />
+  <project path="packages/apps/Changelog" name="android_packages_apps_Changelog" remote="WestCoastRomS" />
+  <project path="packages/apps/CustomDoze" name="android_packages_apps_CustomDoze" remote="WestCoastRomS" />
+  <project path="packages/apps/DocumentsUI" name="android_packages_apps_DocumentsUI" remote="WestCoastRomS" />
+  <project path="packages/apps/DU-Tweaks" name="android_packages_apps_DU-Tweaks" remote="WestCoastRomS" />
+  <project path="packages/apps/DU-Updater" name="android_packages_apps_DU-Updater" remote="WestCoastRomS" />
+  <project path="packages/apps/EmergencyInfo" name="android_packages_apps_EmergencyInfo" remote="WestCoastRomS" />
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="WestCoastRomS" />
+  <project path="packages/apps/Nfc" name="android_packages_apps_Nfc" remote="WestCoastRomS" />
+  <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="WestCoastRomS" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="WestCoastRomS" />
+  <project path="packages/apps/SettingsIntelligence" name="android_packages_apps_SettingsIntelligence" remote="WestCoastRomS" />
+  <project path="packages/apps/WeatherClient" name="android_packages_apps_WeatherClient" remote="WestCoastRomS" />
+  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="WestCoastRomS" />
+  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" remote="WestCoastRomS" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="WestCoastRomS" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="WestCoastRomS" />
+
+  <!-- System -->
+  <project path="system/core" name="android_system_core" remote="WestCoastRomS" />
+  <project path="system/extras" name="android_system_extras" remote="WestCoastRomS" />
+  <project path="system/sepolicy" name="android_system_sepolicy" remote="WestCoastRomS" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/build-tools" name="android_prebuilts_build-tools" remote="WestCoastRomS" />
+  <project path="prebuilts/clang/host/linux-x86" name="DirtyUnicorns/android_prebuilts_clang_host_linux-x86" remote="gitlab" revision="p9x" />
+
+  <!-- Vendor -->
+  <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="WestCoastRomS" />
+  <project path="vendor/du" name="android_vendor_du" remote="WestCoastRomS" >
+    <linkfile src="scripts/merge-aosp.sh" dest="merge-aosp.sh" />
+  </project>
+  <project path="vendor/extras" name="android_vendor_extras" remote="WestCoastRomS" />
+  <project path="vendor/support" name="android_vendor_support" remote="WestCoastRomS" />
+  <project path="vendor/themes" name="android_vendor_themes" remote="WestCoastRomS" />
+
+</manifest>
